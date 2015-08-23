@@ -101,7 +101,18 @@ for i in s_no:
 	    	with open('Composites/spam/%i.txt' % db.labels_[i] ,'a') as file:
 	    		file.write(' '.join(temp) + '\n')
 
-pure_cluster_sno = pure_cluster_sno.astype(int)
+#cluster 55 hardcoded
+pure_cluster_sno = np.append(np.where(db.labels_== 55)[0],pure_cluster_sno).astype(int)
+l = np.where(db.labels_ == 55)[0][0]
+temp = []
+for j in X_train[l].nonzero()[1]:
+        temp.append(symbols[j-1])
+
+with open('Composites/spam/55.txt' ,'a') as file:
+    for i in range(73):
+        file.write(' '.join(temp) + '\n')
+#now we can prepare composites for svm here also but its better to prepare a libsvm type file through shell .
+
 X_pure_cluster = X_train[pure_cluster_sno]
 y_pure_cluster = y_train[pure_cluster_sno]
 
