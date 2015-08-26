@@ -1,3 +1,6 @@
+# This will take the composites in libsvm format and assign them weights using the parameters in SVM with linear kernel.
+# The final weights will be written to a file.
+
 from sklearn.datasets import load_svmlight_file
 from sklearn import svm
 

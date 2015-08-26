@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# This ill split the provided corpus into spam and ham, test and train directories 
+# and create directories for composites and clusters which are used later.
+
 rm TR/"Icon" >/dev/null 2>&1
 rm -R __MACOSX >/dev/null 2>&1
 for file in TR/*.*

@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# This will take ham and spam composites formed after clustering and prepare them in libsvm format for assigning weights.
+# This will also create a numbered list of composites along with their frequencies of occurance.
+
 for file in Composites/ham/*.*
 do
 	sort "$file" | uniq -c | sed 's/[ ]*//' >> "Compositesnumbered.txt"
@@ -12,6 +16,8 @@ done
 
 awk '{printf "%d %s\n", NR, $0}' "Compositesnumbered.txt" > "Compositestemp.txt" && mv "Compositestemp.txt" "Compositesnumbered.txt" 
 
+# Preparing composites for ham in libsvm format
+
 for file in Composites/ham/*.*
 do
 	while read -r line; do
@@ -23,6 +29,7 @@ do
 	done < "$file"
 done
 
+# Preparing composites for spam in libsvm format
 
 for file in Composites/spam/*.*
 do

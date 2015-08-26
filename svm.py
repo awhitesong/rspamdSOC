@@ -1,3 +1,5 @@
+#This will use optimized SVM for predicting ham or spam class on the basis of symbols.
+
 import numpy as np
 from sklearn.datasets import load_svmlight_file
 from sklearn import svm

@@ -1,3 +1,6 @@
+# This will use DBSCAN clustering to detect strong points and clusters specific to spam and ham and write the produced composites and 
+# clusters. Final cleaned points will be exported in libsvm format.
+
 import numpy as np 
 from sklearn.datasets import load_svmlight_file
 from sklearn.cluster import DBSCAN

@@ -1,3 +1,6 @@
+# This uses TSNE to reduce the feature space and plots the initial distribution of corpus messages based on symbols 
+# visualizing them in 2d space. 
+
 import numpy as np
 from sklearn.datasets import load_svmlight_file
 from sklearn.manifold import TSNE
